@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import About from './components/about/About'
+import Contact from './components/contact/Contact'
+import Experience from './components/experience/Experience'
+import Footer from './components/footer/Footer'
+import ParticlesBG from './components/particles/ParticlesBG'
+import Header from './components/header/Header'
+import Nav from './components/navbar/Nav'
+// import Portfolio from './components/portfolio/Portfolio'
+import Qualification from './components/qualification/Qualification'
+import Services from './components/services/Services'
+// import Testimonials from './components/testimonials/Testimonials'
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ParticlesBG/>
+      <Header/>
+      <Nav/>
+      <About/>
+      <Experience/>
+      {/* <Portfolio/> */}
+      <Qualification/>
+      <Services/>
+      {/* <Testimonials/> */}
+      <Contact/>
+      <Footer/>
+    </BrowserRouter>
+      
+    
   );
 }
 
