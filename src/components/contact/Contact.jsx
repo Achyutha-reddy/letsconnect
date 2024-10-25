@@ -29,15 +29,22 @@ export const Contact = () => {
       .sendForm('service_2em683p', 'template_sted1ff', form.current, {
         publicKey: 'NQCJPq9JiN1GSw7Lj',
       })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
+      .then((result) => {
+        alert("Message sent Successfully");
+    }, (error) => {
+      alert("Message sent Unsuccessfully");
+    });
+    e.target.reset()
+    };
+  //     .then(
+  //       () => {
+  //         console.log('SUCCESS!');
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       },
+  //     );
+  // };
 
   return (
     <section id='contact'>
