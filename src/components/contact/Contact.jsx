@@ -4,48 +4,28 @@ import {MdOutlineEmail} from 'react-icons/md'
 import {AiOutlineTwitter} from 'react-icons/ai'
 import {AiFillLinkedin} from 'react-icons/ai'
 import {useRef} from 'react';
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
 
-// const Contact = () => {
-//   const form = useRef();
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-
-//     emailjs.sendForm('service_2em683p', 'template_sted1ff', form.current, 'NQCJPq9JiN1GSw7Lj')
-//     .then((result) => {
-//       alert("Message sent Successfully");
-//   }, (error) => {
-//     alert("Message sent Unsuccessfully");
-//   });
-//   e.target.reset()
-//   };
-export const Contact = () => {
+const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_2em683p', 'template_sted1ff', form.current, {
-        publicKey: 'NQCJPq9JiN1GSw7Lj',
+      .sendForm('service_2em683p', 'template_5dvmq0e', form.current, {
+        publicKey: 'ctW_GbS4ulYuqjcrE',
       })
-      .then((result) => {
-        alert("Message sent Successfully");
-    }, (error) => {
-      alert("Message sent Unsuccessfully");
-    });
-    e.target.reset()
-    };
-  //     .then(
-  //       () => {
-  //         console.log('SUCCESS!');
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       },
-  //     );
-  // };
-
+      .then(
+        () => {
+          alert('MESAGE SENT SUCCESSFULLY!');
+        },
+        (error) => {
+          alert('MESSAGE SENT UNSUCCESSFULLY, ONCE TRY AGIAN.', error.text);
+        },
+      );
+      e.target.reset()
+  };
   return (
     <section id='contact'>
       <h5>GET IN TOUCH</h5>
