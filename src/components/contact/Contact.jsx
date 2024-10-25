@@ -6,18 +6,37 @@ import {AiFillLinkedin} from 'react-icons/ai'
 import {useRef} from 'react';
 import emailjs from 'emailjs-com'
 
-const Contact = () => {
+// const Contact = () => {
+//   const form = useRef();
+//   const sendEmail = (e) => {
+//     e.preventDefault();
+
+//     emailjs.sendForm('service_2em683p', 'template_sted1ff', form.current, 'NQCJPq9JiN1GSw7Lj')
+//     .then((result) => {
+//       alert("Message sent Successfully");
+//   }, (error) => {
+//     alert("Message sent Unsuccessfully");
+//   });
+//   e.target.reset()
+//   };
+export const Contact = () => {
   const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_2em683p', 'template_sted1ff', form.current, 'NQCJPq9JiN1GSw7Lj')
-    .then((result) => {
-      alert("Message sent Successfully");
-  }, (error) => {
-    alert("Message sent Unsuccessfully");
-  });
-  e.target.reset()
+    emailjs
+      .sendForm('service_2em683p', 'template_sted1ff', form.current, {
+        publicKey: 'NQCJPq9JiN1GSw7Lj',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
@@ -46,8 +65,8 @@ const Contact = () => {
           </artical>
         </div>
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name='name' placeholder='Your Full Name' required />
-          <input type="email" name="email" id="" placeholder='Your Email' required/>
+          <input type="text" name='user_name' placeholder='Your Full Name' required />
+          <input type="email" name="user_email" id="" placeholder='Your Email' required/>
           <textarea name="message" id="" rows="7" placeholder='Your Message' required></textarea>
           <button type='submit' className='btn btn-primary'>SEND MESSAGE</button>
         </form>
