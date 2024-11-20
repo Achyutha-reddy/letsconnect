@@ -11,6 +11,7 @@
     "@tsparticles/react": "^3.0.0",
     "browser": "^0.2.6",
     "build": "^0.1.4",
+    "docker": "^1.0.0",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "gh-pages": "^6.2.0",
