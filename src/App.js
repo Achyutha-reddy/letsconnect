@@ -5,7 +5,7 @@ import Footer from './components/footer/Footer'
 import ParticlesBG from './components/particles/ParticlesBG'
 import Header from './components/header/Header'
 import Nav from './components/navbar/Nav'
-// import Portfolio from './components/portfolio/Portfolio'
+import Portfolio from './components/portfolio/Portfolio'
 import Qualification from './components/qualification/Qualification'
 import Services from './components/services/Services'
 // import Testimonials from './components/testimonials/Testimonials'
@@ -20,7 +20,7 @@ const App = () => {
       <Nav/>
       <About/>
       <Experience/>
-      {/* <Portfolio/> */}
+      <Portfolio/>
       <Qualification/>
       <Services/>
       {/* <Testimonials/> */}
